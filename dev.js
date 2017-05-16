@@ -1,8 +1,12 @@
-var WebpackDevServer = require("webpack-dev-server");
-var webpack = require("webpack");
-var config = require("./webpack.config.js");
-var compiler = webpack(config);
-config.entry.index.unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
+const WebpackDevServer = require("webpack-dev-server");
+const webpack = require("webpack");
+const config = require("./webpack.config.js");
+const compiler = webpack(config);
+const argv = process.argv;
+const host = argv[2] || 'localhost';
+const port = argv[3] || 8080;
+
+config.entry.index.unshift("webpack-dev-server/client?http://" + host + ":" + port + "/", "webpack/hot/dev-server");
 
 var server = new WebpackDevServer(compiler, {
   contentBase: "dist",
@@ -21,4 +25,6 @@ var server = new WebpackDevServer(compiler, {
 
   }
 });
-server.listen(8080, "localhost", function() {});
+server.listen(port, host, function() {
+  console.log(`> Listening at http://${host}:${port} \n> Compiling... \n`);
+});

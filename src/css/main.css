@@ -1,0 +1,21 @@
+.logo{
+  width:100px;
+  height: 100px;
+  background:url(../resources/img/logo.png) no-repeat;
+}
+.body {
+  min-width: 1600px;
+  height: 100%;
+  background: #ccc;
+  overflow: hidden;
+  animation: items 1s linear;
+}
+
+@keyframes items {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

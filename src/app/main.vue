@@ -1,10 +1,10 @@
 <template>
 	<div class="body">
-		<div>
-			<span class="fa fa-bath">图标</span>
-		</div>
-		<div class="logo" @click="show()"></div>
-		<p>test</p>
+		<select name="" id="" v-model="nav">
+			<option value="/">样式1</option>
+			<option value="/v2">样式2</option>
+		</select>
+		<router-view></router-view>
 	</div>
 </template>
 <script>
@@ -14,17 +14,18 @@
 	  require("d3-request")
 	);
 	export default {
+		data(){
+			return {
+				nav:'/'
+			}
+		},
 		store,
-		computed:mapGetters({
-			nav:'nav',
-			asset_show:'asset_show',
-		}),
-		components:{},
-		methods:{
-			show(){
-				d3.json('data/stack.json',function(err, res){
-					alert(JSON.stringify(res));
-				})
+		watch:{
+			$route(to){
+				(to.path=='/' || to.path=='v2') && (this.$data.nav = to.path);
+			},
+			nav(val, prev){
+				this.$router.push(val);
 			}
 		}
 	}

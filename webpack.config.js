@@ -108,7 +108,7 @@ const config = {
     }, {
       test: /\.(png|jpg|gif)$/,
       loader: 'url-loader',
-      query: {
+      options: {
         limit: 10,
         name: "img/[name].[ext]?[hash:8]",
         publicPath: '../'

@@ -8,10 +8,12 @@ const port = argv[3] || 8080;
 
 config.entry.index.unshift("webpack-dev-server/client?http://" + host + ":" + port + "/", "webpack/hot/dev-server");
 
+
 var server = new WebpackDevServer(compiler, {
   contentBase: "dist",
   hot: true,
   inline: true,
+  // historyApiFallback: true,
   historyApiFallback: false,
   compress: true,
   watchOptions: {

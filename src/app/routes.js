@@ -1,19 +1,25 @@
-const login = resolve => require(['../components/login/index.vue'], resolve);
-const NotFound = resolve => require(['../components/404/index.vue'], resolve);
-
+const navButton = resolve => require(['./navButton.vue'], resolve);
+const navButton2 = resolve => require(['./navButton2.vue'], resolve);
 export default [
   {
-  	path: '/login',
-  	component: login,
+    path: '/',
+    component: navButton,
+    meta:{
+      title: "index"
+    }
+  },
+  {
+  	path: '/v2',
+  	component: navButton2,
   	meta:{
-  		title: "登录"
+  		title: "index"
   	}
   },
   {
   	path: '*',
-  	component: NotFound,
+  	component: navButton,
   	meta:{
-  		title: "error"
+  		title: "index"
   	}
   },
 ]

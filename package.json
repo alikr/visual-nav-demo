@@ -1,13 +1,13 @@
 {
-  "name": "",
+  "name": "visual-nav-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "visual-nav-demo",
   "main": "",
-  "author": "",
+  "author": "alikr",
   "license": "",
   "scripts": {
     "dev": "node dev",
-    "online": "webpack --config webpack.online.js --progress --colors"
+    "build": "webpack --config webpack.build.js --progress --colors"
   },
   "bin": {
     "webpack": "node_modules/.bin/webpack"

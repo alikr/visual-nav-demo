@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"data": {"id":0,"key":"360.cn","group":"level_1"},"classes":"level_1"},
+    {"data": {"id":1,"key":"yingyan.360.cn","group":"level_2"},"classes":"level_2"},
+    {"data": {"id":2,"key":"webscan.360.cn","group":"level_2"},"classes":"level_2"},
+    {"data": {"id":3,"key":"a.yingyan.360.cn","group":"level_3"},"classes":"level_3"},
+    {"data": {"id":4,"key":"b.yingyan.360.cn","group":"level_3"},"classes":"level_3"},
+    {"data": {"id":5,"key":"80","group":"level_4"},"classes":"level_4"},
+    {"data": {"id":6,"key":"443","group":"level_4"},"classes":"level_4"},
+    {"data": {"id":7,"key":"80","group":"level_4"},"classes":"level_4"}
+  ],
+  "edges": [
+    {"data": {"source":0,"target":1,"type":"http"}},
+    {"data": {"source":0,"target":2,"type":"http"}},
+    {"data": {"source":1,"target":3,"type":"http"}},
+    {"data": {"source":1,"target":4,"type":"http"}},
+    {"data": {"source":3,"target":5,"type":"http"}},
+    {"data": {"source":3,"target":6,"type":"https"}},
+    {"data": {"source":4,"target":7,"type":"http"}}
+  ]
+}
